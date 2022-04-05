@@ -1,0 +1,53 @@
+gravity is -9.81
+bounciness is 0.8
+timestep is 0.001
+endtime is 10
+comma is "," (figure out a singable way to define this!)
+
+calculateenergy takes height and velocitya and velocityb
+    let gravitational be gravity times height times -1
+    let kinetic be 0.5 times velocitya times velocitya plus velocityb times velocityb 
+    return gravitational plus kinetic
+
+bounce takes velocity
+    if velocity is lower than 0
+        let velocity be times -1
+
+    return velocity times bounciness
+
+say "Enter height"
+x is 0
+listen to y
+cast y
+say "Enter horizontal velocity"
+listen to velx
+cast velx
+vely is 0
+let startingenergy be calculateenergy taking y , velx , vely
+time is 0
+
+say "time,x,y,vel_x,vel_y,energy"
+while true
+    let energy be calculateenergy taking y,velx,vely
+    let outputline be time plus comma plus x plus comma plus y plus comma plus velx plus comma plus vely plus comma plus energy
+    say outputline
+    if y is lower than timestep times vely times -1
+        let thistimestep be y over vely
+        let velx be bounce taking velx
+        let vely be bounce taking vely
+    
+    if y is as high as timestep times vely times -1 (should be an else, but interpretor doesnt handle blocks properly)
+        let thistimestep be timestep
+
+    let time be plus thistimestep
+    let x be plus thistimestep times velx
+    let y be plus thistimestep times vely
+    let vely be plus thistimestep times gravity
+    if energy is lower than startingenergy over 1000
+        break
+
+    if time is as high as endtime
+        break
+
+
+
