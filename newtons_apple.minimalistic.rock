@@ -1,8 +1,11 @@
-gravity is -9.81
-bounciness is 0.8
+minusone is -1
+gravity is 9.81
+let gravity be times minusone
+bounciness is 0.5
 timestep is 0.001
-endtime is 10
-comma is "," (figure out a singable way to define this!)
+endtime is 2
+comma is 44
+cast comma
 
 calculateenergy takes height and velocitya and velocityb
     let gravitational be gravity times height times -1
@@ -11,7 +14,7 @@ calculateenergy takes height and velocitya and velocityb
 
 bounce takes velocity
     if velocity is lower than 0
-        let velocity be times -1
+        let velocity be times minusone
 
     return velocity times bounciness
 
@@ -26,17 +29,33 @@ vely is 0
 let startingenergy be calculateenergy taking y , velx , vely
 time is 0
 
-say "time,x,y,vel_x,vel_y,energy"
+rock columntitles with "time"
+rock columntitles with "x"
+rock columntitles with "y"
+rock columntitles with "x velocity"
+rock columntitles with "y velocity"
+rock columntitles with "energy"
+join columntitles with comma
+say columntitles
+
 while true
     let energy be calculateenergy taking y,velx,vely
-    let outputline be time plus comma plus x plus comma plus y plus comma plus velx plus comma plus vely plus comma plus energy
+    rock outputline
+    let outputline at 0 be time
+    rock outputline with x
+    rock outputline with y
+    rock outputline with velx
+    rock outputline with vely
+    rock outputline with energy
+    join outputline with comma
     say outputline
-    if y is lower than timestep times vely times -1
+    outputline is empty
+    if y is lower than timestep times vely times minusone
         let thistimestep be y over vely
         let velx be bounce taking velx
         let vely be bounce taking vely
     
-    if y is as high as timestep times vely times -1 (should be an else, but interpretor doesnt handle blocks properly)
+    if y is as high as timestep times vely times minusone (should be an else, but interpretor doesnt handle blocks properly)
         let thistimestep be timestep
 
     let time be plus thistimestep
