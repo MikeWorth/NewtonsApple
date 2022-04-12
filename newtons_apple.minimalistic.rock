@@ -10,7 +10,8 @@ cast comma
 
 calculateenergy takes height and velocitya and velocityb
     let gravitational be gravity times height times -1
-    let kinetic be 0.5 times velocitya times velocitya plus velocityb times velocityb 
+    half is 0.5
+    let kinetic be half times velocitya times velocitya plus half times velocityb times velocityb 
     return gravitational plus kinetic
 
 bounce takes velocity
@@ -30,12 +31,14 @@ vely is 0
 let startingenergy be calculateenergy taking y , velx , vely
 time is 0
 
+xstring is 120
+burn xstring
+ystring is 121
+burn ystring
+
 rock columntitles with "time"
-rock columntitles with "x"
-rock columntitles with "y"
-rock columntitles with "x velocity"
-rock columntitles with "y velocity"
-rock columntitles with "energy"
+rock columntitles with xstring
+rock columntitles with ystring
 join columntitles with comma
 say columntitles
 
@@ -45,9 +48,6 @@ while true
     let outputline at 0 be time
     rock outputline with x
     rock outputline with y
-    rock outputline with velx
-    rock outputline with vely
-    rock outputline with energy
     join outputline with comma
     say outputline
     outputline is empty

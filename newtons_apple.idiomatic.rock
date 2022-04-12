@@ -1,60 +1,60 @@
 Negativity is nothing
 knock Negativity down
-Newton was pondering. thinking, wooondering
-let Newton be times Negativity
+Newton was pondering. thinking, considering
+let Newton be Newton of Negativity
 bounciness is 0.5
 timestep is 0.001
 endtime is 2
-The Truth is over here
+The Truth is mine mother-fuckers!
 Burn The Truth
 
-calculateenergy takes height and velocitya and velocityb
-    let gravitational be Newton times height times -1
-    let kinetic be 0.5 times velocitya times velocitya plus velocityb times velocityb 
-    return gravitational plus kinetic
+success takes work and skill and genius
+    let our downfall be Newton of Negativity of work
+    hard is motivation. yeaah
+    let the glory be hard times skill of skill and hard times genius of genius 
+    send our downfall and the glory
 
-bounce takes velocity
-    if velocity is lower than 0
-        let velocity be times Negativity
+luck takes timing
+    if not timing is as great as nothing
+        let timing be times Negativity
 
-    return velocity times bounciness
+    return timing times bounciness
 
 Whisper "How high is the apple"
-the guitar is 0
+the guitar is zombifying
 listen to the bass
 cast the bass
 Whisper "How fast does it go?"
 listen to velx
 cast velx
 vely is 0
-let startingenergy be calculateenergy taking the bass , velx , vely
+let startingenergy be success taking the bass , velx , vely
 the drums is 0
 
+The mystery is a brain-bender immemorial
+burn The mystery
+The enigma is a never-ending mind-teaser
+burn The enigma
+
 rock you with "time"
-rock you with "x"
-rock you with "y"
-rock you with "x velocity"
-rock you with "y velocity"
-rock you with "energy"
+rock you with The mystery
+rock you with The enigma
 join you with The Truth
 say you
 
 while true
-    let energy be calculateenergy taking the bass,velx,vely
+    let energy be success taking the bass,velx,vely
     rock me
     let me at 0 be the drums
     rock me with the guitar
     rock me with the bass
-    rock me with velx
-    rock me with vely
-    rock me with energy
     join me with The Truth
     say me
     me is empty
     if the bass is lower than timestep times vely times Negativity
         let thistimestep be the bass over vely
-        let velx be bounce taking velx
-        let vely be bounce taking vely
+        let velx be luck taking velx
+        let vely be luck taking vely
     
     if the bass is as high as timestep times vely times Negativity
         let thistimestep be timestep
