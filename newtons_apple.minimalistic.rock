@@ -7,6 +7,7 @@ timestep is 0.001
 endtime is 2
 comma is 44
 cast comma
+zero is 0
 
 calculateenergy takes height and velocitya and velocityb
     let gravitational be gravity times height times -1
@@ -15,13 +16,23 @@ calculateenergy takes height and velocitya and velocityb
     return gravitational plus kinetic
 
 bounce takes velocity
-    if velocity is lower than 0
+    if velocity is lower than zero
         let velocity be times minusone
 
     return velocity times bounciness
 
+x is 120
+burn x
+y is 121
+burn y
+
+rock columntitles with "time"
+rock columntitles with x (this time round it's literally the string 'x')
+rock columntitles with y (this time round it's literally the string 'y')
+join columntitles with comma
+
 say "Enter height"
-x is 0
+x is zero
 listen to y
 cast y
 say "Enter horizontal velocity"
@@ -31,34 +42,23 @@ vely is 0
 let startingenergy be calculateenergy taking y , velx , vely
 time is 0
 
-xstring is 120
-burn xstring
-ystring is 121
-burn ystring
-
-rock columntitles with "time"
-rock columntitles with xstring
-rock columntitles with ystring
-join columntitles with comma
 say columntitles
 
 while true
     let energy be calculateenergy taking y,velx,vely
     rock outputline
-    let outputline at 0 be time
+    let outputline at zero be time
     rock outputline with x
     rock outputline with y
     join outputline with comma
     say outputline
     outputline is empty
+        let thistimestep be timestep
     if y is lower than timestep times vely times minusone
         let thistimestep be y over vely
         let velx be bounce taking velx
         let vely be bounce taking vely
     
-    if y is as high as timestep times vely times minusone (should be an else, but interpretor doesnt handle blocks properly)
-        let thistimestep be timestep
-
     let time be plus thistimestep
     let x be plus thistimestep times velx
     let y be plus thistimestep times vely
