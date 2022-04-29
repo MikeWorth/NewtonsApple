@@ -32,7 +32,7 @@ rock columntitles with y (this time round it's literally the string 'y')
 join columntitles with comma
 
 say "Enter height"
-x is zero
+x is 0
 listen to y
 cast y
 say "Enter horizontal velocity"
