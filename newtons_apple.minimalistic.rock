@@ -3,15 +3,10 @@ gravity is 9.81
 x is 120
 y is 121
 timestep is 0.001
-endtime is 2
-minusone is nothing
-knock minusone down
-let gravity be times minusone
-zero is 0
 
 calculateenergy takes height and velocitya and velocityb
-    let gravitational be gravity times height times -1
     half is 0.5
+    let gravitational be height times gravity
     let kinetic be half times velocitya times velocitya plus half times velocityb times velocityb 
     return gravitational plus kinetic
 
@@ -19,8 +14,13 @@ bounce takes velocity
     if velocity is lower than zero
         let velocity be times minusone
 
-    return velocity times bounciness
+    finalvelocity is bouncieness times velocity
+    return finalvelocity
 
+endtime is 2
+minusone is nothing
+knock minusone down
+zero is 0
 
 comma is 44
 cast x
@@ -32,8 +32,9 @@ rock columntitles with x (this time round it's literally the string 'x')
 rock columntitles with y (this time round it's literally the string 'y')
 join columntitles with comma
 
-say "Enter height"
+time is 0
 x is 0
+say "Enter height"
 listen to y
 cast y
 say "Enter horizontal velocity"
@@ -41,7 +42,6 @@ listen to velx
 cast velx
 vely is 0
 let startingenergy be calculateenergy taking y , velx , vely
-time is 0
 
 say columntitles
 
@@ -63,7 +63,7 @@ while true
     let time be plus thistimestep
     let x be plus thistimestep times velx
     let y be plus thistimestep times vely
-    let vely be plus thistimestep times gravity
+    let vely be plus thistimestep times gravity times minusone
     if startingenergy over 1000 is greater than energy
         break
 
