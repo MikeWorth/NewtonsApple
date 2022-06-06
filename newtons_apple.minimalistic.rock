@@ -1,12 +1,12 @@
 bounciness is 0.624
 gravity is 9.81
+x is 120
+y is 121
 timestep is 0.001
 endtime is 2
 minusone is nothing
 knock minusone down
 let gravity be times minusone
-comma is 44
-cast comma
 zero is 0
 
 calculateenergy takes height and velocitya and velocityb
@@ -21,10 +21,11 @@ bounce takes velocity
 
     return velocity times bounciness
 
-x is 120
-y is 121
+
+comma is 44
 cast x
 cast y
+cast comma
 
 rock columntitles with "time"
 rock columntitles with x (this time round it's literally the string 'x')
