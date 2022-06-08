@@ -11,6 +11,8 @@ calculateenergy takes height and velocitya and velocityb
     return gravitational plus kinetic
 
 endtime is 2
+onethousand is 1000
+
 minusone is nothing
 knock minusone down
 zero is 0
@@ -66,7 +68,7 @@ while true
     let x be plus thistimestep times velx
     let y be plus thistimestep times vely
     let vely be plus thistimestep times gravity times minusone
-    if startingenergy over 1000 is greater than energy
+    if startingenergy is greater than energy times onethousand
         break
 
     if time is as high as endtime
