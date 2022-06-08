@@ -1,4 +1,4 @@
-bounciness is 0.624
+bounciness is 0.624 (a value chosen for poetic reasons...)
 gravity is 9.81
 x is 120
 y is 121
@@ -19,7 +19,7 @@ bounce takes velocity
     if velocity is lower than zero
         let velocity be times minusone
 
-    finalvelocity is bouncieness times velocity
+    let finalvelocity be bounciness times velocity
     return finalvelocity
 
 cast x
@@ -53,7 +53,7 @@ while true
     rock outputline with x
     rock outputline with y
     join outputline with comma
-    let outputline be output line
+    let outputline be outputline
     shout it
     outputline is empty
     let thistimestep be timestep
