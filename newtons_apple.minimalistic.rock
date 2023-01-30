@@ -2,6 +2,7 @@ bounciness is 0.624 (a value chosen for poetic reasons...)
 gravity is 9.81
 x is 120
 y is 121
+zero is 0
 timestep is 0.001
 
 calculateenergy takes height and velocitya and velocityb
@@ -48,7 +49,7 @@ let startingenergy be calculateenergy taking y , velx , vely
 let columntitles be columntitles
 say columntitles
 
-while true
+while zero aint minusone
     let energy be calculateenergy taking y,velx,vely
     rock outputline
     let outputline at zero be time
@@ -59,7 +60,7 @@ while true
     shout it
     outputline is empty
     let thistimestep be timestep
-    if y is lower than timestep times vely times minusone
+    if thistimestep times vely times minusone is greater than y
         let thistimestep be y over vely
         let velx be bounce taking velx
         let vely be bounce taking vely
@@ -67,7 +68,8 @@ while true
     let time be plus thistimestep
     let x be plus thistimestep times velx
     let y be plus thistimestep times vely
-    let vely be plus thistimestep times gravity times minusone
+    put thistimestep times gravity into deltavel
+    let vely be plus deltavel times minusone
     if startingenergy is greater than energy times onethousand
         break
 
